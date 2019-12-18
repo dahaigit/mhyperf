@@ -25,12 +25,12 @@ class IndexController extends AbstractController
     }
 
     /**
-     * Notes: 异步上传图片
+     * Notes: 上传图片
      * User: mhl
      * @param RequestInterface $request
      * @return string
      */
-    public function asyncUploadFile(RequestInterface $request)
+    public function uploadFile(RequestInterface $request)
     {
         $savePath = BASE_PATH . '/upload/images/';
         if (!is_dir($savePath)) {

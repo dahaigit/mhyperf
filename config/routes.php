@@ -13,4 +13,4 @@ declare(strict_types=1);
 use Hyperf\HttpServer\Router\Router;
 
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
-Router::addRoute('POST', '/async-upload-file', 'App\Controller\IndexController@asyncUploadFile');
+Router::addRoute('POST', '/upload-file', 'App\Controller\IndexController@uploadFile');
