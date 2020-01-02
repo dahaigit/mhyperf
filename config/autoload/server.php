@@ -26,6 +26,21 @@ return [
                 SwooleEvent::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
             ],
         ],
+        [
+            'name' => 'jsonrpc',
+            'type' => Server::SERVER_BASE,
+            'host' => '0.0.0.0',
+            'port' => 9502,
+            'sock_type' => SWOOLE_SOCK_TCP,
+            'callbacks' => [
+                SwooleEvent::ON_RECEIVE => [\Hyperf\JsonRpc\TcpServer::class, 'onReceive'],
+            ],
+            'settings' => [
+//                'open_eof_split' => true,
+//                'package_eof' => '\r\n',
+                'package_max_length' => 1024 * 1024 * 2,
+            ],
+        ],
     ],
     'settings' => [
         'enable_coroutine' => true,
@@ -42,4 +57,5 @@ return [
         SwooleEvent::ON_WORKER_START => [Hyperf\Framework\Bootstrap\WorkerStartCallback::class, 'onWorkerStart'],
         SwooleEvent::ON_PIPE_MESSAGE => [Hyperf\Framework\Bootstrap\PipeMessageCallback::class, 'onPipeMessage'],
     ],
+
 ];

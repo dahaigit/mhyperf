@@ -12,16 +12,28 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\JsonRpc\CalculatorServiceInterface;
 use Hyperf\HttpServer\Contract\RequestInterface;
+use Hyperf\Utils\ApplicationContext;
 
 class IndexController extends AbstractController
 {
     public function index(RequestInterface $request)
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        return $this->rpcAdd($request);
+    }
 
-        return 6;
+    /**
+     * Notes: jsonrpc计算加法
+     * User: mhl
+     * @param $request
+     * @return mixed
+     */
+    public function rpcAdd($request)
+    {
+        $client = ApplicationContext::getContainer()->get(CalculatorServiceInterface::class);
+        $result = $client->add(10, 12);
+        return $result;
     }
 
     /**
