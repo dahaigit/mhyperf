@@ -6,7 +6,6 @@ use Hyperf\RpcClient\AbstractServiceClient;
 
 class CalculatorServiceConsumer extends AbstractServiceClient implements CalculatorServiceInterface
 {
-    // Call to undefined method App\JsonRpc\CalculatorServiceConsumer::sum()
     /**
      * 定义对应服务提供者的服务名称
      * @var string

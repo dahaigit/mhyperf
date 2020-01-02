@@ -29,15 +29,13 @@ return [
         [
             'name' => 'jsonrpc',
             'type' => Server::SERVER_BASE,
-            'host' => '0.0.0.0',
+            'host' => '192.168.10.10',
             'port' => 9502,
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
                 SwooleEvent::ON_RECEIVE => [\Hyperf\JsonRpc\TcpServer::class, 'onReceive'],
             ],
             'settings' => [
-//                'open_eof_split' => true,
-//                'package_eof' => '\r\n',
                 'package_max_length' => 1024 * 1024 * 2,
             ],
         ],

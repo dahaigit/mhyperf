@@ -5,7 +5,7 @@ use Hyperf\RpcServer\Annotation\RpcService;
 
 /**
  * 注意，如希望通过服务中心来管理服务，需在注解内增加 publishTo 属性
- * @RpcService(name="CalculatorService", protocol="jsonrpc", server="jsonrpc")
+ * @RpcService(name="CalculatorService", protocol="jsonrpc", server="jsonrpc", publishTo="consul")
  */
 class CalculatorService implements CalculatorServiceInterface
 {
