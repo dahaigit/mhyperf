@@ -39,7 +39,8 @@
         "hyperf/rpc-server": "^1.1",
         "hyperf/rpc-client": "^1.1",
         "hyperf/service-governance": "^1.1",
-        "hyperf/consul": "^1.1"
+        "hyperf/consul": "^1.1",
+        "hyperf/circuit-breaker": "^1.1"
     },
     "require-dev": {
         "swoft/swoole-ide-helper": "^4.2",
