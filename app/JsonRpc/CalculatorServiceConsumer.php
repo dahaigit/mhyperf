@@ -21,7 +21,7 @@ class CalculatorServiceConsumer extends AbstractServiceClient implements Calcula
 
     /**
      * 这里我们使用注解，设置了add函数的降级函数。
-     * @CircuitBreaker(timeout=0.05, failCounter=1, successCounter=1, fallback="App\JsonRpc\CalculatorServiceConsumer::addFillCallback")
+     * @CircuitBreaker(timeout=1, failCounter=1, successCounter=1, fallback="App\JsonRpc\CalculatorServiceConsumer::addFillCallback")
      */
     public function add(int $a, int $b)
     {

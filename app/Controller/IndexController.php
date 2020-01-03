@@ -14,10 +14,14 @@ namespace App\Controller;
 
 use App\JsonRpc\CalculatorServiceInterface;
 use Hyperf\HttpServer\Contract\RequestInterface;
+use Hyperf\RateLimit\Annotation\RateLimit;
 use Hyperf\Utils\ApplicationContext;
 
 class IndexController extends AbstractController
 {
+    /**
+     * @RateLimit(create=1, capacity=3)
+     */
     public function index(RequestInterface $request)
     {
         return $this->rpcAdd($request);
@@ -26,8 +30,6 @@ class IndexController extends AbstractController
     /**
      * Notes: jsonrpc计算加法
      * User: mhl
-     * @param $request
-     * @return mixed
      */
     public function rpcAdd($request)
     {

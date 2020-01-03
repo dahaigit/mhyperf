@@ -33,14 +33,15 @@
         "hyperf/paginator": "~1.1.0",
         "hyperf/pool": "~1.1.0",
         "hyperf/process": "~1.1.0",
-        "hyperf/redis": "~1.1.0",
+        "hyperf/redis": "^1.1",
         "hyperf/utils": "~1.1.0",
         "hyperf/json-rpc": "^1.1",
         "hyperf/rpc-server": "^1.1",
         "hyperf/rpc-client": "^1.1",
         "hyperf/service-governance": "^1.1",
         "hyperf/consul": "^1.1",
-        "hyperf/circuit-breaker": "^1.1"
+        "hyperf/circuit-breaker": "^1.1",
+        "hyperf/rate-limit": "^1.1"
     },
     "require-dev": {
         "swoft/swoole-ide-helper": "^4.2",
