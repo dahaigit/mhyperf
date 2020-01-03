@@ -20,7 +20,7 @@ use Hyperf\Utils\ApplicationContext;
 class IndexController extends AbstractController
 {
     /**
-     * @RateLimit(create=1, capacity=3)
+     * @RateLimit
      */
     public function index(RequestInterface $request)
     {
