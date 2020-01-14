@@ -35,8 +35,15 @@ return [
             'callbacks' => [
                 SwooleEvent::ON_RECEIVE => [\Hyperf\JsonRpc\TcpServer::class, 'onReceive'],
             ],
-            'settings' => [
-                'package_max_length' => 1024 * 1024 * 2,
+        ],
+        [
+            'name' => 'jsonrpc-http',
+            'type' => Server::SERVER_HTTP,
+            'host' => '0.0.0.0',
+            'port' => 9503,
+            'sock_type' => SWOOLE_SOCK_TCP,
+            'callbacks' => [
+                SwooleEvent::ON_REQUEST => [\Hyperf\JsonRpc\HttpServer::class, 'onRequest'],
             ],
         ],
     ],
