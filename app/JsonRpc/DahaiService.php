@@ -13,10 +13,10 @@ class DahaiService implements CalculatorServiceInterface
     public function add($a, $b) {
         // 如何请求
         /*
-         * 请求地址：192.168.10.10:9502
+         * 请求地址：192.168.10.10:9503
          * 请求内容：{
                         "jsonrpc": "2.0",
-                        "method": "calculator/add",
+                        "method": "dahai/add",
                         "params": [
                             2,
                             2
